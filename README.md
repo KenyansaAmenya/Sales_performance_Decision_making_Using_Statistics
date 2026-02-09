@@ -1,197 +1,155 @@
-# Retail Sales Statistical Analysis Project
-📊 Project Overview
-A comprehensive statistical analysis of retail sales data to evaluate performance, test marketing effectiveness, and provide data-driven business recommendations.
+# 📊 Retail Sales Statistical Analysis Project
 
-📁 Dataset
-File: statistics_sales_project_data.csv
+## 📋 Project Overview
+A comprehensive statistical analysis of retail sales data from a retail company operating both online and physical stores across multiple regions. The analysis aims to understand sales performance, evaluate marketing effectiveness, and provide data-driven business recommendations using statistical methods.
 
-Columns:
+---
 
-date: Transaction date
+## 📁 Dataset Information
 
-store_type: Online / Physical
+**File:** `statistics_sales_project_data.csv`  
+**Records:** 1,460+ daily transactions  
+**Time Period:** January 2023 - April 2026 (3+ years)
 
-region: Region of sale (Central, Coast, Nairobi, Rift Valley, Western)
+### Columns:
+| Column | Description | Type |
+|--------|-------------|------|
+| `date` | Transaction date | DateTime |
+| `store_type` | Online or Physical store | Categorical |
+| `region` | Region of sale (Central, Coast, Nairobi, Rift Valley, Western) | Categorical |
+| `units_sold` | Number of units sold | Integer |
+| `revenue` | Total revenue in Kenyan Shillings (KES) | Float |
+| `marketing_campaign` | Whether marketing campaign was active (Yes/No) | Boolean |
 
-units_sold: Number of units sold
+---
 
-revenue: Total revenue in KES
+## 🎯 Project Objectives
 
-marketing_campaign: Yes / No
+### Business Questions:
+1. How are sales performing across different store types and regions?
+2. Is the new marketing strategy actually improving revenue?
+3. How reliable are our sales insights?
 
-Time Period: January 2023 - April 2026 (3+ years of transaction data)
+### Statistical Learning Objectives:
+1. **Descriptive Statistics** - Central tendency and distribution shape
+2. **Data Visualization** - Multiple chart types for different insights
+3. **Sampling and Bias** - Awareness of sampling methods
+4. **Central Limit Theorem** - Understanding sample mean distributions
+5. **Hypothesis Testing** - One-tailed and two-tailed tests
+6. **Error Interpretation** - Type I and Type II errors
+7. **Effect Size & Power** - Practical significance assessment
 
-🎯 Project Objectives
-Apply descriptive statistics to understand sales performance
+---
 
-Visualize sales patterns and distributions
+## 📈 Analysis Results Summary
 
-Apply sampling theory and Central Limit Theorem
+### Part 1: Descriptive Statistics
 
-Conduct hypothesis testing on marketing effectiveness
+#### Task 1.1 – Central Tendency (Monthly Revenue)
+| Measure | Value (KES) | Recommendation |
+|---------|------------|----------------|
+| Mean | [Calculated Value] | Primary measure if no outliers |
+| Median | [Calculated Value] | Better if outliers present |
+| Mode | [Calculated Value] | Less useful for continuous data |
 
-Understand statistical errors and their business implications
+**Key Finding:** [Median/Mean] is the best measure because [explanation based on outlier analysis].
 
-Calculate effect sizes and statistical power
+#### Task 1.3 – Distribution Shape
+- **Skewness:** [Value] → [Positive/Negative/Symmetric] distribution
+- **Kurtosis:** [Value] → [Heavy/Light/Normal] tails
+- **Interpretation:** Revenue distribution shows [description of shape pattern]
 
-📈 Analysis Performed
-Part 1: Descriptive Statistics
-Task 1.1: Central tendency measures (Mean, Median, Mode) for monthly revenue
+---
 
-Task 1.3: Distribution shape analysis (skewness, kurtosis)
+### Part 2: Data Visualization
 
-Part 2: Data Visualization
-Line chart: Revenue trends over time
+#### Four Key Visualizations:
+1. **Line Chart** - Monthly Revenue Trends
+   - Shows: Seasonal patterns, growth trends, revenue fluctuations
+   - Insight: [Peak months, growth rate, anomalies]
 
-Bar chart: Revenue by store type (Online vs Physical)
+2. **Bar Chart** - Revenue by Store Type
+   - Shows: Online vs Physical store performance
+   - Insight: [Which performs better, by what margin]
 
-Box plot: Revenue distribution by region
+3. **Box Plot** - Revenue by Region
+   - Shows: Distribution, median, spread, outliers per region
+   - Insight: [Most consistent region, highest median, outliers]
 
-Scatter plot: Units sold vs Revenue
+4. **Scatter Plot** - Units Sold vs Revenue
+   - Shows: Correlation between units and revenue
+   - Insight: [Strong/Weak linear relationship, average revenue per unit]
 
-Part 3: Sampling and Bias
-Task 3.1: Sampling methods comparison
+---
 
-Task 3.2: Systematic vs Random sampling
+### Part 3: Sampling and Bias
 
-Part 4: Central Limit Theorem
-Task 4.2: Demonstrate CLT with 200 samples (n=30)
+#### Task 3.1 – Sampling Methods
+- **Random Sampling:** Each transaction has equal chance
+- **Systematic Sampling:** Every nth transaction
+- **Stratified Sampling:** By store type or region
 
-Show convergence to normal distribution
+#### Task 3.2 – Bias Types
+- **Selection Bias:** Online-only analysis misses physical stores
+- **Measurement Bias:** Revenue recording errors
+- **Temporal Bias:** Seasonal fluctuations not accounted for
 
-Part 5: Hypothesis Testing
-Business Question: Does marketing campaign increase average revenue?
+---
 
-Task 5.1: Hypotheses formulation (H₀, H₁)
+### Part 4: Central Limit Theorem
 
-Task 5.2: t-test execution and decision making
-
-Part 6: Errors and Interpretation
-Task 6.1: Type I vs Type II errors in business context
-
-Real-world implications of statistical errors
-
-Part 7: Effect Size and Power
-Task 7.1: Cohen's d calculation and interpretation
-
-Task 7.2: Statistical power analysis and recommendations
-
-🔧 Technical Implementation
-Prerequisites
-bash
-pip install pandas numpy matplotlib seaborn scipy statsmodels
-Required Libraries
-python
-import pandas as pd
-import numpy as np
-import matplotlib.pyplot as plt
-import seaborn as sns
-from scipy import stats
-from statsmodels.stats.power import TTestIndPower
-Key Code Snippets
-1. Data Loading and Preparation
-python
-df = pd.read_csv('statistics_sales_project_data.csv')
-df['date'] = pd.to_datetime(df['date'])
-2. Monthly Revenue Calculation
-python
-df['month'] = df['date'].dt.strftime('%Y-%m')
-monthly_revenue = df.groupby('month')['revenue'].sum()
-3. Marketing Campaign Hypothesis Test
-python
-from scipy.stats import ttest_ind
-revenue_with = df[df['marketing_campaign'] == 'Yes']['revenue']
-revenue_without = df[df['marketing_campaign'] == 'No']['revenue']
-t_stat, p_value = ttest_ind(revenue_with, revenue_without, equal_var=False)
-4. Effect Size Calculation
-python
-# Cohen's d
-mean_diff = revenue_with.mean() - revenue_without.mean()
-pooled_std = np.sqrt(((n1-1)*std1**2 + (n2-1)*std2**2) / (n1 + n2 - 2))
-cohens_d = mean_diff / pooled_std
-📋 Key Findings
-1. Central Tendency
-Mean Monthly Revenue: [Value]
-
-Median Monthly Revenue: [Value]
-
-Recommendation: Use [Mean/Median] due to [presence/absence] of outliers
-
-2. Distribution Characteristics
-Revenue distribution is [positively/negatively] skewed
-
-Kurtosis indicates [heavy/light] tails
-
-3. Marketing Campaign Effectiveness
-Statistical Result: [Significant/Not significant] (p = [value])
-
-Effect Size: [Small/Medium/Large] (Cohen's d = [value])
-
-Business Recommendation: [Continue/Discontinue/Further test] marketing campaigns
-
-4. Statistical Power
-Current power: [XX]%
-
-Recommended action: [Collect more data/Current sample sufficient]
-
-🎓 Statistical Concepts Demonstrated
-Descriptive Statistics: Measures of center and spread
-
-Data Visualization: Multiple chart types for different insights
-
-Sampling Theory: Random vs systematic sampling
-
-Central Limit Theorem: Convergence of sample means to normal distribution
-
-Hypothesis Testing: One-tailed t-test for marketing effectiveness
-
-Error Types: Type I (false positive) vs Type II (false negative)
-
-Effect Size: Practical significance beyond p-values
-
-Statistical Power: Ability to detect true effects
-
-📊 Business Insights
-Marketing Recommendations
-Based on statistical test: [Actionable recommendation]
-
-Effect size consideration: [Economic vs statistical significance]
-
-Risk assessment: [Type I/II error implications]
-
-Operational Insights
-Best performing store type: [Online/Physical]
-
-Regional performance: [Top performing region]
-
-Seasonal patterns: [Trends over time]
-
-🚀 How to Run the Analysis
-Clone/Download the project files
-
-Install dependencies: pip install -r requirements.txt
-
-Run Jupyter Notebook or Python script
-
-Follow the analysis flow from Part 1 to Part 7
-
-Modify parameters for different scenarios
-
-📚 Educational Value
-This project demonstrates:
-
-Real-world application of statistical concepts
-
-Business problem formulation as statistical questions
-
-Interpretation of results in business context
-
-Decision making under uncertainty
-
-Communication of statistical findings to non-technical stakeholders
-
-📄 License
-Educational Use - For learning and demonstration purposes
-
-👥 Author
-Statistical Analysis Project - Retail Sales Data
+#### Task 4.2 – CLT Demonstration
+- **Samples:** 200 random samples
+- **Sample Size:** n = 30 transactions each
+- **Observation:** Distribution of sample means approximates normal curve
+- **Business Implication:** Can use normal distribution for inference even if raw data is skewed
+
+**Why CLT Works:**
+1. Averages reduce extreme values
+2. Sampling variability creates symmetry
+3. Mathematical guarantee with n ≥ 30
+4. Enables confidence intervals and hypothesis tests
+
+---
+
+### Part 5: Hypothesis Testing
+
+#### Business Question:
+"Does running a marketing campaign increase average revenue per transaction?"
+
+#### Task 5.1 – Hypotheses Formulation
+- **H₀ (Null):** μ_campaign = μ_no_campaign  
+  (No difference in average revenue)
+- **H₁ (Alternative):** μ_campaign > μ_no_campaign  
+  (Campaign increases average revenue)
+- **Test Type:** One-tailed t-test (right-tailed)
+- **Confidence Level:** 95%
+- **Alpha (α):** 0.05
+
+#### Task 5.2 – Statistical Test Results
+| Metric | Value |
+|--------|-------|
+| Test Statistic (t) | [Value] |
+| p-value (one-tailed) | [Value] |
+| Decision at α=0.05 | [Reject/Fail to reject H₀] |
+| Conclusion | [Campaign does/does not increase revenue] |
+
+---
+
+### Part 6: Errors and Interpretation
+
+#### Task 6.1 – Statistical Errors
+
+**Type I Error (False Positive):**
+- **Statistical:** Reject H₀ when it's true
+- **Business:** Conclude campaign works when it doesn't
+- **Consequence:** Wasted marketing budget, false confidence
+- **Probability:** α = 0.05 (5% risk we accept)
+
+**Type II Error (False Negative):**
+- **Statistical:** Fail to reject H₀ when it's false
+- **Business:** Conclude campaign doesn't work when it does
+- **Consequence:** Missed revenue opportunity
+- **Probability:** β (depends on sample size and effect)
+
+**Type I Error Example Impact:**
