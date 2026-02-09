@@ -153,3 +153,41 @@ A comprehensive statistical analysis of retail sales data from a retail company 
 - **Probability:** β (depends on sample size and effect)
 
 **Type I Error Example Impact:**
+
+
+---
+
+### Part 7: Effect Size and Power
+
+#### Task 7.1 – Effect Size (Cohen's d)
+| Metric | Value | Interpretation |
+|--------|-------|----------------|
+| Cohen's d | [Value] | [Small/Medium/Large] effect |
+| Mean Difference | KES [Value] | [Percentage]% increase |
+| Effect Category | [Very Small/Small/Medium/Large] | |
+
+**Effect Size Guidelines:**
+- **d < 0.2:** Negligible effect (not practically meaningful)
+- **0.2 ≤ d < 0.5:** Small effect (noticeable but minor)
+- **0.5 ≤ d < 0.8:** Medium effect (practically important)
+- **d ≥ 0.8:** Large effect (substantial difference)
+
+#### Task 7.2 – Power Discussion
+- **Current Power:** [XX]% (probability of detecting true effect)
+- **Recommended Power:** ≥80% for reliable testing
+- **Why Low Power Matters:** Risk of Type II error (missing real effects)
+
+**Should Company Collect More Data?**
+- **Yes, if:** Current power < 80% AND effect size is meaningful
+- **No, if:** Power already high OR effect is too small to matter economically
+
+**Power Increase Example:**
+- Current (n=[current]): [XX]% power
+- With n=500 per group: [YY]% power
+- Recommendation: [Collect more data/Current sample sufficient]
+
+---
+
+## 🏢 Business Recommendations
+
+### 1. Marketing Strategy:
