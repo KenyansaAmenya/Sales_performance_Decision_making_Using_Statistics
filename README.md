@@ -48,9 +48,9 @@ A comprehensive statistical analysis of retail sales data from a retail company 
 #### Task 1.1 – Central Tendency (Monthly Revenue)
 | Measure | Value (KES) | Recommendation |
 |---------|------------|----------------|
-| Mean | [Calculated Value] | Primary measure if no outliers |
-| Median | [Calculated Value] | Better if outliers present |
-| Mode | [Calculated Value] | Less useful for continuous data |
+| Mean | [Ksh 248,159.22] | Primary measure if no outliers |
+| Median | [KSH 250,308.56] | Better if outliers present |
+| Mode | [Less informative] | Less useful for continuous data |
 
 **Key Finding:** [Median/Mean] is the best measure because [explanation based on outlier analysis].
 
