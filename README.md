@@ -55,8 +55,8 @@ A comprehensive statistical analysis of retail sales data from a retail company 
 **Key Finding:** [Median/Mean] is the best measure because [explanation based on outlier analysis].
 
 #### Task 1.3 – Distribution Shape
-- **Skewness:** [Value] → [Positive/Negative/Symmetric] distribution
-- **Kurtosis:** [Value] → [Heavy/Light/Normal] tails
+- **Skewness:** [0.749] → [Positive/Negative/Symmetric] distribution
+- **Kurtosis:** [0.614] → [Heavy/Light/Normal] tails
 - **Interpretation:** Revenue distribution shows [description of shape pattern]
 
 ---
@@ -129,8 +129,8 @@ A comprehensive statistical analysis of retail sales data from a retail company 
 #### Task 5.2 – Statistical Test Results
 | Metric | Value |
 |--------|-------|
-| Test Statistic (t) | [Value] |
-| p-value (one-tailed) | [Value] |
+| Test Statistic (t) | [4.3357] |
+| p-value (one-tailed) | [0.0000] |
 | Decision at α=0.05 | [Reject/Fail to reject H₀] |
 | Conclusion | [Campaign does/does not increase revenue] |
 
@@ -162,7 +162,7 @@ A comprehensive statistical analysis of retail sales data from a retail company 
 #### Task 7.1 – Effect Size (Cohen's d)
 | Metric | Value | Interpretation |
 |--------|-------|----------------|
-| Cohen's d | [Value] | [Small/Medium/Large] effect |
+| Cohen's d | [0.265] | [Small/Medium/Large] effect |
 | Mean Difference | KES [Value] | [Percentage]% increase |
 | Effect Category | [Very Small/Small/Medium/Large] | |
 
